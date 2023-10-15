@@ -1,0 +1,210 @@
+*{
+    padding: 0;
+    /* overflow: auto; */
+}
+.entetesidebar{
+    /* background-color: black ; */
+    position: relative;
+    width: 192px;
+}
+.entetenavbar{
+    /* background-color: #017bfe; */
+    width: 800px;
+}
+#btn-toggle{
+    cursor: pointer;
+}
+
+#map{
+    width: 100%;
+    height: 300px;
+}
+
+.bubbleWrapper {
+	padding: 10px 10px;
+	display: flex;
+	justify-content: flex-end;
+	flex-direction: column;
+	align-self: flex-end;
+    color: #fff;
+}
+.inlineContainer {
+  display: inline-flex;
+}
+.inlineContainer.own {
+  flex-direction: row-reverse;
+}
+.inlineIcon {
+  width:20px;
+  object-fit: contain;
+}
+.ownBubble {
+    width: 100%;
+	padding: 5px 18px;
+    margin: 3px 4px;
+	background-color: #017bfe;
+	border-radius: 16px 16px 0 16px;
+ 
+}
+.otherBubble {
+	min-width: 60px;
+	max-width: 700px;
+	padding: 3px 4px;
+    margin: 6px 8px;
+	background-color: #bfc0c2d0;
+	border-radius: 16px 16px 16px 0;
+    color: black;
+  
+}
+.own {
+	align-self: flex-end;
+}
+.other {
+	align-self: flex-start;
+}
+span.own,
+span.other{
+  font-size: 14px;
+  color: grey;
+}
+
+.direct-chat{
+    height: 200px;
+    overflow: auto;
+}
+.todoliste{
+    position: relative;
+    top: -170px;
+}
+@media screen and (max-width: 800px) {
+    .todoliste {
+      top: 5px;
+    }
+  }
+
+.today {
+    color: #010101;
+    font-weight: 600;
+}
+
+.calendar {
+    /* border: 2px solid #337ab7; */
+    background-color: #47b25f;
+    padding: 10px;
+    border-radius: 10px;
+    height: 350px;
+    box-shadow: 0px 0px 5px 0px #0cc660;
+    position: relative;
+    top: -60px;
+}
+td{
+    cursor: pointer;
+    border: none;
+    padding: 0;
+}
+
+.completed {
+    text-decoration: line-through;
+}
+.gray-badge {
+    background-color: #ccc;
+}
+.list-group-item {
+    cursor: grab;
+}
+.edit-icon {
+    display: none;
+    position: absolute;
+    right: 0;
+}
+.list-group-item:hover .edit-icon {
+    display: block;
+}
+.icon-checkbox-badge {
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    /* background-color: aqua; */
+    gap: 15px;
+}
+
+
+.card-stat{
+    height: 150px;
+    width: 220px;
+    padding: 0%;
+}
+
+.card-stat .card-text{
+    margin: 0;
+    /* background-color: #017bfe; */
+}
+.card-stat .card-text h2{
+    font-size: 45px;
+}
+
+.card-stat .card-text p{
+    /* background-color: #017bfe; */
+    width: 140px;
+}
+.card-stat .card-text img{
+    /* background-color: #017bfe; */
+    position: relative;
+    right: 20px;
+}
+.card-stat .card-text .img1{
+    /* background-color: #017bfe; */
+    position: relative;
+    right: 30px;
+}
+
+.entetesidebar img{
+    width: 20%;
+    margin-right: 10px;
+}
+
+
+.naviconsearch{
+    position: relative;
+    /* background-color: #017bfe !important; */
+    left: -29px;
+}
+
+.sidenav{
+    width: 24%;
+    height: 100vh;
+    overflow: hidden;
+    overflow-y: scroll;
+    float: left;
+    transition: ease .4s;
+}
+
+.corpsv1{
+    /* background-color: #017bfe; */
+    height: 100vh;
+    box-sizing: border-box;
+    overflow-y: auto;
+}
+body{
+    overflow: hidden;
+}
+
+.img2{
+    position: relative;
+    left: -40px;
+}
+.img3{
+    position: relative;
+    left: -10px;
+}
+.cachernav{
+    width: 0px;
+    height: 0px;
+    transition: ease .4s;
+
+    /* overflow: hidden; */
+    /* transition: 2s ease; */
+}
+#fullscreen-button{
+    cursor: pointer;
+}

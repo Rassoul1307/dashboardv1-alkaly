@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <!-- Bootstrap 5 CDN Links -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+            <!-- ----------link leaflet---------------- -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"/>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="d-flex">
+        <section class="entetesidebar bg-dark">
+            <div class="w-100 d-flex border pb-3 border-top-0 border-left-0">
+                <img src="img/AdminLTELogo.webp"alt="" srcset="">
+                <span class="text-white-50 mt-1 fs-5 text-center">AdminLTE 3</span>
+            </div>
+        </section>
+        <section class=" p-0 d-flex justify-content-between">
+            <div class="d-flex py-2 entetenavbar">
+                <button type="button" class="btn btn-white btn-toggle"><i class="fa-solid fa-bars"></i></button>
+                <button type="button" class="btn btn-white">Home</i></button>
+                <button type="button" class="btn btn-white">Contact</i></button> 
+            </div>
+            <div class="d-flex gap-4 mt-3 e-4">
+                <i class="fa-solid fa-magnifying-glass text-black-50 fs-6"></i>
+                <i class="fa-regular fa-message fs-6"></i>
+                <i class="fa-regular fa-bell fs-6"></i>
+                <i class="fa-solid fa-compress" id="fullscreen-button"></i>
+                <i class="fa-brands fa-windows fs-6"></i>
+              </div>
+        </section>
+
+    </div>
+    <section class="dashbordv1 d-flex">
+        <div class="sidenav p-0 pb-5 bg-dark">
+            <section class="entetesidebar bg-dark">
+                <div class="w-100 d-flex border pb-3 border-top-0 border-left-0 pt-3">
+                    <img src="img/user2-160x160.jpg" class="w-25 rounded-circle" alt="" srcset="">
+                    <span class="text-white-50 mt-2  fs-6 text-center">Alexander Pierce</span>
+                </div>
+            </section>
+            <div class="d-flex mt-2">
+                <input type="search" name="search" id="" class="rounded-2 text-white border-0 py-1 bg-secondary" placeholder="search">
+                <span class="bg-secondary naviconsearch border border-top-0 border-bottom-0 border-right-0 px-2"><i class="fa-solid pt-2 text-white fa-magnifying-glass"></i></span>
+            </div>
+            <div class="bg-primary d-flex mt-3 rounded-2 m-1 p-2 text-white">
+                <span><i class="fa-solid fs-5 fa-gauge mt-1"></i></span>
+                <span class="fs-6 ms-2">Dashboard</span>
+                <button class=" btn btn-primary py-0 fs-6 ms-auto"><i class="fa-solid fw-bold fa-angle-left"></i></button>
+            </div>
+            <div class="bg-dark d-flex mt-3 rounded-2 m-1 p-2 text-white">
+                <span><i class="fa-brands fs-5 fa-windows mt-1"></i></span>
+                <span class="fs-6 ms-2">Widgets</span>
+                <span class="badge text-bg-danger text-center pt-2 ms-auto">New</span>
+            </div>
+            <div>
+                <div class="bg-secondary d-flex mt-3 rounded-2 m-1 p-2 text-white">
+                    <span><i class="fa-regular fa-paste fs-5 mt-3"></i></span>
+                    <span class="fs-6 ms-2"> Layout Options</span>
+                    <p class="bg-info rounded-2 px-2 mt-3">3</p>
+                    <button class=" btn text-white py-0 fs-6 ms-auto"><i class="fa-solid fw-bold fa-angle-down"></i></button>
+                </div>
+                <div>
+                    <div class="bg-dark d-flex rounded-2 m-1 p-2 text-white">
+                        <span><i class="fa-regular fa-circle"></i></span>
+                        <span class="fs-6 ms-2"> Top Navigation</span>
+                    </div>
+                    <div class="bg-dark d-flex rounded-2 m-1 p-2 text-white">
+                        <span><i class="fa-regular fa-circle"></i></span>
+                        <span class="fs-6 ms-2"> Top Navigation + Sidebar</span>
+                    </div>
+                    <div class="bg-dark d-flex rounded-2 m-1 p-2 text-white">
+                        <span><i class="fa-regular fa-circle"></i></span>
+                        <span class="fs-6 ms-2">Boxed</span>
+                    </div>
+                    <div class="bg-dark d-flex rounded-2 m-1 p-2 text-white">
+                        <span><i class="fa-regular fa-circle"></i></span>
+                        <span class="fs-6 ms-2">Fixed Sidebar</span>
+                    </div>
+                    <div class="bg-dark d-flex rounded-2 m-1 p-2 text-white">
+                        <span><i class="fa-regular fa-circle"></i></span>
+                        <span class="fs-6 ms-2">Fixed Sidebar + Custom Area</span>
+                    </div>
+                    <div class="bg-dark d-flex rounded-2 m-1 p-2 text-white">
+                        <span><i class="fa-regular fa-circle"></i></span>
+                        <span class="fs-6 ms-2">Fixed Navbar</span>
+                    </div>
+                    <div class="bg-dark d-flex rounded-2 m-1 p-2 text-white">
+                        <span><i class="fa-regular fa-circle"></i></span>
+                        <span class="fs-6 ms-2"> Fixed Footer</span>
+                    </div>
+                    <div class="bg-dark d-flex rounded-2 m-1 p-2 text-white">
+                        <span><i class="fa-regular fa-circle"></i></span>
+                        <span class="fs-6 ms-2"> Collapsed Sidebar</span>
+                    </div>
+                </div>
+            </div>
+            <!-- ---------------------charts------------- -->
+            <div>
+                <div class="bg-secondary d-flex mt-3 rounded-2 m-1 p-2 text-white">
+                    <span><i class="fa-solid fa-chart-pie"></i></span>
+                    <span class="fs-6 ms-2">Charts</span>
+                    <button class=" btn text-white py-0 fs-6 ms-auto"><i class="fa-solid fw-bold fa-angle-down"></i></button>
+                </div>
+                <div>
+                    <div class="bg-dark d-flex rounded-2 m-1 p-2 text-white">
+                        <span><i class="fa-regular fa-circle"></i></span>
+                        <span class="fs-6 ms-2"> ChartJS</span>
+                    </div>
+                    <div class="bg-dark d-flex rounded-2 m-1 p-2 text-white">
+                        <span><i class="fa-regular fa-circle"></i></span>
+                        <span class="fs-6 ms-2">Flot</span>
+                    </div>
+                    <div class="bg-dark d-flex rounded-2 m-1 p-2 text-white">
+                        <span><i class="fa-regular fa-circle"></i></span>
+                        <span class="fs-6 ms-2"> Inline</span>
+                    </div>
+                    <div class="bg-dark d-flex rounded-2 m-1 p-2 text-white">
+                        <span><i class="fa-regular fa-circle"></i></span>
+                        <span class="fs-6 ms-2"> uPlot</span>
+                    </div>
+                </div>
+            </div>
+            <!-- --------------------------- UI Elements------------- -->
+            <div>
+                <div class="bg-secondary d-flex mt-3 rounded-2 m-1 p-2 text-white">
+                    <span><i class="fa-solid fa-bell"></i></span>
+                    <span class="fs-6 ms-2">UI Elements</span>
+                    <button class=" btn text-white py-0 fs-6 ms-auto"><i class="fa-solid fw-bold fa-angle-down"></i></button>
+                </div>
+                <div>
+                    <div class="bg-dark d-flex rounded-2 m-1 p-2 text-white">
+                        <span><i class="fa-regular fa-circle"></i></span>
+                        <span class="fs-6 ms-2">General</span>
+                    </div>
+                    <div class="bg-dark d-flex rounded-2 m-1 p-2 text-white">
+                        <span><i class="fa-regular fa-circle"></i></span>
+                        <span class="fs-6 ms-2">Icons</span>
+                    </div>
+                    <div class="bg-dark d-flex rounded-2 m-1 p-2 text-white">
+                        <span><i class="fa-regular fa-circle"></i></span>
+                        <span class="fs-6 ms-2">Buttons</span>
+                    </div>
+                    <div class="bg-dark d-flex rounded-2 m-1 p-2 text-white">
+                        <span><i class="fa-regular fa-circle"></i></span>
+                        <span class="fs-6 ms-2">Sliders</span>
+                    </div>
+                    <div class="bg-dark d-flex rounded-2 m-1 p-2 text-white">
+                        <span><i class="fa-regular fa-circle"></i></span>
+                        <span class="fs-6 ms-2">Modals & Alerts</span>
+                    </div>
+                    <div class="bg-dark d-flex rounded-2 m-1 p-2 text-white">
+                        <span><i class="fa-regular fa-circle"></i></span>
+                        <span class="fs-6 ms-2">Navbar & Tabs</span>
+                    </div>
+                    <div class="bg-dark d-flex rounded-2 m-1 p-2 text-white">
+                        <span><i class="fa-regular fa-circle"></i></span>
+                        <span class="fs-6 ms-2">Timeline</span>
+                    </div>
+                    <div class="bg-dark d-flex rounded-2 m-1 p-2 text-white">
+                        <span><i class="fa-regular fa-circle"></i></span>
+                        <span class="fs-6 ms-2">Ribbons</span>
+                    </div>
+                </div>
+            </div>
+            <!-- ------------------------ Forms----------------------- -->
+            <div>
+                <div class="bg-secondary d-flex mt-3 rounded-2 m-1 p-2 text-white">
+                    <span><i class="fa-brands fa-wpforms"></i></span>
+                    <span class="fs-6 ms-2">Forms</span>
+                    <button class=" btn text-white py-0 fs-6 ms-auto"><i class="fa-solid fw-bold fa-angle-down"></i></button>
+                </div>
+                <div>
+                    <div class="bg-dark d-flex rounded-2 m-1 p-2 text-white">
+                        <span><i class="fa-regular fa-circle"></i></span>
+                        <span class="fs-6 ms-2">General Elements</span>
+                    </div>
+                    <div class="bg-dark d-flex rounded-2 m-1 p-2 text-white">
+                        <span><i class="fa-regular fa-circle"></i></span>
+                        <span class="fs-6 ms-2">Advanced Elements</span>
+                    </div>
+                    <div class="bg-dark d-flex rounded-2 m-1 p-2 text-white">
+                        <span><i class="fa-regular fa-circle"></i></span>
+                        <span class="fs-6 ms-2">Editors</span>
+                    </div>
+                    <div class="bg-dark d-flex rounded-2 m-1 p-2 text-white">
+                        <span><i class="fa-regular fa-circle"></i></span>
+                        <span class="fs-6 ms-2">Validation</span>
+                    </div>
+                </div>
+            </div>
+            <!-- ------------------------ TAbles----------------------- -->
+            <div>
+                <div class="bg-secondary d-flex mt-3 rounded-2 m-1 p-2 text-white">
+                    <span><i class="fa-solid fa-table"></i></span>
+                    <span class="fs-6 ms-2">Tables</span>
+                    <button class=" btn text-white py-0 fs-6 ms-auto"><i class="fa-solid fw-bold fa-angle-down"></i></button>
+                </div>
+                <div>
+                    <div class="bg-dark d-flex rounded-2 m-1 p-2 text-white">
+                        <span><i class="fa-regular fa-circle"></i></span>
+                        <span class="fs-6 ms-2">Simple Tables</span>
+                    </div>
+                    <div class="bg-dark d-flex rounded-2 m-1 p-2 text-white">
+                        <span><i class="fa-regular fa-circle"></i></span>
+                        <span class="fs-6 ms-2">DataTables</span>
+                    </div>
+                    <div class="bg-dark d-flex rounded-2 m-1 p-2 text-white">
+                        <span><i class="fa-regular fa-circle"></i></span>
+                        <span class="fs-6 ms-2">jsGrid</span>
+                    </div>
+                </div>
+            </div>
+            <!-- -------------------------------Exemples---------------------- -->
+            <h6 class="text-white ms-3">EXAMPLES</h6>
+            <div class="bg-dark d-flex rounded-2 mt-1 px-2 text-white">
+                <span><i class="fa-solid fa-calendar-days"></i></span>
+                <span class="fs-6 ms-2">Calendar</span>
+                <p class="bg-info rounded-2 px-2 ms-auto">2</p>
+            </div>
+            <div class="bg-dark d-flex rounded-2 px-2 text-white">
+                <span><i class="fa-regular fa-image"></i></span>
+                <span class="fs-6 ms-2">Gallery</span>
+            </div>
+            <div class="bg-dark d-flex mt-3 rounded-2 px-2 text-white">
+                <span><i class="fa-solid fa-table-columns"></i></span>
+                <span class="fs-6 ms-2">Kanban Board</span>
+            </div>
+            <!-- ------------------------Mail----------------------- -->
+            <div>
+                <div class="bg-secondary d-flex mt-3 rounded-2 m-1 p-2 text-white">
+                    <span><i class="fa-solid fa-envelope"></i></span>
+                    <span class="fs-6 ms-2">Mailbox</span>
+                    <button class=" btn text-white py-0 fs-6 ms-auto"><i class="fa-solid fw-bold fa-angle-down"></i></button>
+                </div>
+                <div>
+                    <div class="bg-dark d-flex rounded-2 m-1 p-2 text-white">
+                        <span><i class="fa-regular fa-circle"></i></span>
+                        <span class="fs-6 ms-2">Inbox</span>
+                    </div>
+                    <div class="bg-dark d-flex rounded-2 m-1 p-2 text-white">
+                        <span><i class="fa-regular fa-circle"></i></span>
+                        <span class="fs-6 ms-2">Compose</span>
+                    </div>
+                    <div class="bg-dark d-flex rounded-2 m-1 p-2 text-white">
+                        <span><i class="fa-regular fa-circle"></i></span>
+                        <span class="fs-6 ms-2">Read</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="p-0">
+            <!-- -------------Corps---------------- -->
+            <section class="container-fluid corpsv1">
+                <div class="d-flex justify-content-between pt-3">
+                    <h3 class="fw-normal">Dashboard</h3>
+                    <div>
+                        <h6 class="text-primary pt-1 fw-normal">Home  <span class="text-black-50">/ Dashboard v1</span></h6>
+                    </div>
+                </div>
+                <!-- ----------------card-------------------- -->
+                <div class="container p-0">
+                    <div class="d-flex row flex-wrap justify-content-around">
+                        <div class="card card-stat text-bg-info mb-3">
+                            <div class="card-body">
+                                <div class="card-text text-white d-flex">
+                                    <div class="me-4">
+                                        <h2>150</h2>
+                                        <p>New Orders</p>
+                                    </div>
+                                    <div>
+                                        <img class="fs-1 img1 fw-bold mt-2" src="img/sacs-a-provisions.png" alt="" srcset="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-header text-center">More info</div>
+                        </div>
+                        <div class="card card-stat text-bg-success mb-3 ">
+                            <div class="card-body">
+                                <div class="card-text d-flex">
+                                    <div class="me-4">
+                                        <h2>53%</h2>
+                                        <p>Bounce Rate</p>
+                                    </div>
+                                    <div>
+                                        <img class="fs-1 img2 fw-bold mt-2" src="img/diagramme-a-bandes.png" alt="" srcset="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-header text-center">More info</div>
+                        </div>
+                        <div class="card card-stat text-bg-warning mb-3 ">
+                            <div class="card-body">
+                                <div class="card-text d-flex">
+                                    <div>
+                                        <h2>44</h2>
+                                        <p>User Registrations</p>
+                                    </div>
+                                    <div>
+                                        <img class="fs-1 img3 fw-bold mt-2" src="img/ajouter-un-utilisateur.png" alt="" srcset="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-header text-center">More info</div>
+                        </div>
+                        <div class="card card-stat text-bg-danger mb-3 ">
+                            <div class="card-body">
+                                <div class="card-text d-flex">
+                                    <div>
+                                        <h2>65</h2>
+                                        <p>Unique Visitors</p>
+                                    </div>
+                                    <div>
+                                        <img class="fs-1 fw-bold mt-2" src="img/part-de-marche.png" alt="" srcset="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-header text-center">More info</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- ---------------------------diagramme--------------- -->
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-7">
+                            <div class="card">
+                                <div class="card-header d-flex justify-content-between">
+                                    <div class="pt-1">
+                                        <i class="fa-solid fa-chart-pie"></i>
+                                        <span>Sales</span>
+                                    </div>
+                                    <div>
+                                        <button class="btn btn-primary">Area</button>
+                                        <button class="btn btn-white">Donut</button>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <img class="w-100" src="Arae.jpg" alt="" srcset="">
+                                </div>
+                              </div>
+                        </div>
+                        <div class="col-md-5">
+                            <div class="card">
+                                <div class="card-header bg-primary d-flex justify-content-between">
+                                    <div class="pt-1">
+                                        <i class="fa-solid fa-location-dot text-white"></i>
+                                        <span class="text-white">Visitors</span>
+                                    </div>
+                                    <div>
+                                        <button class="btn btn-primary"><i class="fa-solid fa-calendar-days"></i></button>
+                                        <button class="btn btn-white"><i class="text-white fa-solid fa-minus"></i></button>
+                                    </div>
+                                </div>
+                                <div class="card-body p-0">
+                                    <div id="map"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row d-flex justify-content-between">
+                        <div class="col-md-7 mt-3">
+                            <div class="card">
+                                <div class="card-header bg-white d-flex justify-content-between">
+                                    <div class="pt-1">
+                                        <span>Direct Chat</span>
+                                    </div>
+                                    <div>
+                                        <button class="btn btn-primary p-0 px-1">3</button>
+                                        <button class="btn btn-white"><i class="text-black text-opacity-25 fa-solid fa-minus"></i></button>
+                                        <button class="btn btn-white"><i class="text-black text-opacity-25 fa-solid fa-comments"></i></button>
+                                        <button class="btn btn-white"><i class="text-black text-opacity-25 fa-solid fa-xmark"></i></button>                            </div>
+                                </div>
+                                <div class="card-body p-0">
+                                    <div class="card-body direct-chat">
+                                        <div class="bubbleWrapper">
+                                                <div class="inlineContainer">
+                                                    <img class="inlineIcon" src="https://cdn1.iconfinder.com/data/icons/ninja-things-1/1772/ninja-simple-512.png">
+                                                    <div class="otherBubble other">
+                                                        No ninjas!
+                                                    </div>
+                                                </div><span class="other">08:41</span>
+                                        </div>
+                                        <div class="bubbleWrapper">
+                                                <div class="inlineContainer own">
+                                                    <img class="inlineIcon" src="https://www.pinclipart.com/picdir/middle/205-2059398_blinkk-en-mac-app-store-ninja-icon-transparent.png">
+                                                    <div class="ownBubble own">
+                                                     The first rule of being a ninja is, 'Do no harm.'
+                                                    </div>
+                                                </div><span class="own">08:55</span>
+                                        </div>
+                                        <div class="bubbleWrapper">
+                                                <div class="inlineContainer">
+                                                    <img class="inlineIcon" src="https://cdn1.iconfinder.com/data/icons/ninja-things-1/1772/ninja-simple-512.png">
+                                                    <div class="otherBubble other">
+                                                        Knowing when to leave requires training.
+                                                    </div>
+                                                </div>
+                                        </div><span class="other">10:13</span>
+                                        <div class="bubbleWrapper">
+                                                <div class="inlineContainer own">
+                                                    <img class="inlineIcon" src="https://www.pinclipart.com/picdir/middle/205-2059398_blinkk-en-mac-app-store-ninja-icon-transparent.png">
+                                                    <div class="ownBubble own">
+                                                    Stunned but impressed. 
+                                                    </div>
+                                                </div><span class="own">11:07</span>
+                                        </div>
+                                        <div class="bubbleWrapper">
+                                                <div class="inlineContainer">
+                                                    <img class="inlineIcon" src="https://cdn1.iconfinder.com/data/icons/ninja-things-1/1772/ninja-simple-512.png">
+                                                    <div class="otherBubble other">
+                                                        How about throwing stars?
+                                                    </div>
+                                                </div><span class="other">11:11</span>
+                                        </div>
+                                    </div>
+                                    <div class="card-footer">
+                                        <div class="input-group">
+                                            <input type="text" id="message-input" class="form-control" placeholder="Tapez un message...">
+                                            <div class="input-group-append">
+                                                <button id="send-button" class="btn btn-primary">Envoyer</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-5 mt-2">
+                            <div class="card">
+                                <div class="card-header bg-info d-flex justify-content-between">
+                                    <div class="pt-1">
+                                        <i class="fa-brands fa-windows"></i>
+                                        <span>Sales Graph</span>
+                                    </div>
+                                    <div>
+                                        <button class="btn btn-info"><i class="text-white fa-solid fa-minus"></i></button>
+                                        <button class="btn btn-info"><i class="text-white fa-solid fa-xmark"></i></button>
+                                    </div>
+                                </div>
+                                <div class="card-body p-0">
+                                    <img class="w-100" src="sales-graph.jpg" alt="" srcset="">
+                                </div>
+                              </div>
+                        </div>
+                    </div>
+                    <div class="row d-flex mt-5 justify-content-between">
+                        <div class="col-md-7 mt-5 todoliste">
+                            <div class="card">
+                                <div class="card-header bg-white d-flex justify-content-between">
+                                    <div class="pt-1">
+                                        <span>To Do List </span>
+                                    </div>
+                                    <div>
+                                        <nav aria-label="Page navigation example">
+                                            <ul class="pagination">
+                                              <li class="page-item">
+                                                <a class="page-link" href="#" aria-label="Previous">
+                                                  <span aria-hidden="true">&laquo;</span>
+                                                </a>
+                                              </li>
+                                              <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                              <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                              <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                              <li class="page-item">
+                                                <a class="page-link" href="#" aria-label="Next">
+                                                  <span aria-hidden="true">&raquo;</span>
+                                                </a>
+                                              </li>
+                                            </ul>
+                                          </nav>                            
+                                    </div>
+                                </div>
+                                <div class="cart-body p-0">
+                                    <div class="container">
+                                        <ul class="list-group mt-3" id="task-list">
+                                            <li class="list-group-item" draggable="true">
+                                                <div class="icon-checkbox-badge">
+                                                    <span class="drag-icon"><i class="fas fa-grip-vertical"></i></span>
+                                                    <div class="custom-control custom-checkbox">
+                                                        <input type="checkbox" class="custom-control-input" id="task1">
+                                                        <label class="custom-control-label fw-bold" for="task1">Make the theme responsive</label>
+                                                    </div>
+                                                    <span class="badge badge-info mt-1 ml-2">4 hours</span>
+                                                    <span class="edit-icon"><i class="far fa-edit"></i></span>
+                                                </div>
+                                            </li>
+                                            <li class="list-group-item" draggable="true">
+                                                <div class="icon-checkbox-badge">
+                                                    <span class="drag-icon"><i class="fas fa-grip-vertical"></i></span>
+                                                    <div class="custom-control custom-checkbox">
+                                                        <input type="checkbox" class="custom-control-input" id="task1">
+                                                        <label class="custom-control-label fw-bold" for="task1">Design a nice theme</label>
+                                                    </div>
+                                                    <span class="badge badge-danger mt-1 ml-2">2 mins</span>
+                                                    <span class="edit-icon"><i class="far fa-edit"></i></span>
+                                                </div>
+                                            </li>
+                                            <li class="list-group-item" draggable="true">
+                                                <div class="icon-checkbox-badge">
+                                                    <span class="drag-icon"><i class="fas fa-grip-vertical"></i></span>
+                                                    <div class="custom-control custom-checkbox">
+                                                        <input type="checkbox" class="custom-control-input" id="task1">
+                                                        <label class="custom-control-label fw-bold" for="task1">Let theme shine like a star</label>
+                                                    </div>
+                                                    <span class="badge badge-warning mt-1 ml-2">1 day</span>
+                                                    <span class="edit-icon"><i class="far fa-edit"></i></span>
+                                                </div>
+                                            </li>
+                                            <li class="list-group-item" draggable="true">
+                                                <div class="icon-checkbox-badge">
+                                                    <span class="drag-icon"><i class="fas fa-grip-vertical"></i></span>
+                                                    <div class="custom-control custom-checkbox">
+                                                        <input type="checkbox" class="custom-control-input" id="task1">
+                                                        <label class="custom-control-label fw-bold" for="task1">Let theme shine like a star</label>
+                                                    </div>
+                                                    <span class="badge badge-secondary mt-1 ml-2">1 month</span>
+                                                    <span class="edit-icon"><i class="far fa-edit"></i></span>
+                                                </div>
+                                            </li>
+                                            <li class="list-group-item" draggable="true">
+                                                <div class="icon-checkbox-badge">
+                                                    <span class="drag-icon"><i class="fas fa-grip-vertical"></i></span>
+                                                    <div class="custom-control custom-checkbox">
+                                                        <input type="checkbox" class="custom-control-input" id="task1">
+                                                        <label class="custom-control-label fw-bold" for="task1">Let theme shine like a star </label>
+                                                    </div>
+                                                    <span class="badge badge-success mt-1 ml-2">3 days</span>
+                                                    <span class="edit-icon"><i class="far fa-edit"></i></span>
+                                                </div>
+                                            </li>
+                                            <li class="list-group-item" draggable="true">
+                                                <div class="icon-checkbox-badge">
+                                                    <span class="drag-icon"><i class="fas fa-grip-vertical"></i></span>
+                                                    <div class="custom-control custom-checkbox">
+                                                        <input type="checkbox" class="custom-control-input" id="task1">
+                                                        <label class="custom-control-label fw-bold" for="task1">Check your messages and notifications</label>
+                                                    </div>
+                                                    <span class="badge badge-primary mt-1 ml-2">1 week</span>
+                                                    <span class="edit-icon"><i class="far fa-edit"></i></span>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="btn btn-primary d-flex w-25 ms-auto">
+                                        <span><i class="fa-solid fa-plus"></i></span>
+                                        Add items
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-5 calendrier mt p-0 mt-4 text-white">
+                            <div class="calendar">
+                                <div class="d-flex">
+                                    <i class="fa-regular mt-1 me-2 fs-4 fa-calendar-days"></i>
+                                    <h4 class="fw-normal">Calendar</h4>
+                                </div>
+                                <div class="calendar-header d-flex justify-content-around">
+                                    <button class="btn btn-sm float-left fw-bold fs-4 text-white" id="prev-month">&lt;</button>
+                                    <h2 id="current-month" class="text-center"></h2>
+                                    <button class="btn btn-sm float-right fw-bold fs-4 text-white" id="next-month">&gt;</button>
+                                </div>
+                                <table class="table">
+                                    <thead class="">
+                                        <tr class="text-white w-75">
+                                            <th class="text-center">Dim</th>
+                                            <th class="text-center">Lun</th>
+                                            <th class="text-center">Mar</th>
+                                            <th class="text-center">Mer</th>
+                                            <th class="text-center">Jeu</th>
+                                            <th class="text-center">Ven</th>
+                                            <th class="text-center">Sam</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="calendar-body" class="text-white fs-6 fw-bold">
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+        
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </section>
+
+    
+
+
+
+    <!-- Bootstrap 5 CDN Links and js links-->
+    <script src="https://kit.fontawesome.com/3e56bd9026.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.14.0/Sortable.min.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
